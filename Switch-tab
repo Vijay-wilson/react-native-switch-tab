@@ -1,0 +1,35 @@
+import React from "react";
+import { View, Text } from "react-native";
+import { SwitchTab } from 'react-native-switch-tab';
+
+const Tab1Content = () => (
+  <View>
+    <Text>Content of Tab 1</Text>
+  </View>
+);
+
+const Tab2Content = () => (
+  <View>
+    <Text>Content of Tab 2</Text>
+  </View>
+);
+
+const tabs = [
+  { title: "Tab 1", content: <Tab1Content /> },
+  { title: "Tab 2", content: <Tab2Content /> },
+];
+
+const App = () => {
+  return (
+    <SwitchTab
+      tabs={tabs}
+      activeTabStyle={{ borderBottomWidth: 3, borderBottomColor: "blue" }}
+      inactiveTabStyle={{ borderBottomWidth: 0 }}
+      activeTextStyle={{ color: "blue", fontWeight: "bold" }}
+      inactiveTextStyle={{ color: "black" }}
+      tabContentStyle={{ backgroundColor: "white" }}
+    />
+  );
+};
+
+export default App;
